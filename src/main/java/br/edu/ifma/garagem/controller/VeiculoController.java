@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("usuario/{usuario}/veiculos")
+@RequestMapping("usuarios/{usuario}/veiculos")
 @RequiredArgsConstructor
 public class VeiculoController {
 
@@ -20,6 +20,19 @@ public class VeiculoController {
     @GetMapping
     public ResponseEntity<List<Veiculo>> getAll(@PathVariable("usuario") int usuario){
         return new ResponseEntity<>(veiculoService.findByUsuario(usuario), HttpStatus.OK);
+    }
+
+    @GetMapping("/placa/{placa}")
+    public ResponseEntity<Veiculo> getPorPlaca(@PathVariable("usuario") int idUsuario,
+                                              @PathVariable("placa") String placa){
+        return new ResponseEntity<>(veiculoService.findByPlaca(placa), HttpStatus.OK);
+    }
+
+    @GetMapping("/selo/{selo}")
+    public ResponseEntity<Veiculo> getPorSelo(@PathVariable("usuario") int idUsuario,
+                                              @PathVariable("selo") int selo){
+        return new ResponseEntity<>(veiculoService.findBySelo(selo), HttpStatus.OK);
+
     }
 
     @GetMapping("/{id}")

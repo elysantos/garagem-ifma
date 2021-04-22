@@ -1,10 +1,12 @@
 package br.edu.ifma.garagem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data
 public class Veiculo {
     private int id;
+    @JsonIgnore
     private Usuario proprietario;
     private String marca;
     private String modelo;

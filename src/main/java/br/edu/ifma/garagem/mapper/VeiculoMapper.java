@@ -19,4 +19,8 @@ public interface VeiculoMapper {
     void update(@Param("veiculo") Veiculo veiculo);
 
     void delete(@Param("idVeiculo") int idVeiculo);
+
+    Veiculo findBySelo(@Param("selo") int selo);
+
+    Veiculo findByPlaca(@Param("placa") String placa);
 }

@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OficinaApplication {
+public class GaragemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OficinaApplication.class, args);
+        SpringApplication.run(GaragemApplication.class, args);
     }
 
 }

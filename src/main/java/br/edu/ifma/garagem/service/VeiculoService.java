@@ -58,4 +58,12 @@ public class VeiculoService {
             throw new BDException(e.getMessage());
         }
     }
+
+    public Veiculo findBySelo(int selo) {
+        return veiculoMapper.findBySelo(selo);
+    }
+
+    public Veiculo findByPlaca(String placa) {
+        return veiculoMapper.findByPlaca(placa);
+    }
 }
